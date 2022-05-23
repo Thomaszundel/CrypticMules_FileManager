@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrypticMules_FileManager", "CrypticMules_FileManager\CrypticMules_FileManager.csproj", "{287DDF0D-E35C-46D2-A140-F345B49885CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagerTestProject", "FileManagerTestProject\FileManagerTestProject.csproj", "{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{287DDF0D-E35C-46D2-A140-F345B49885CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{287DDF0D-E35C-46D2-A140-F345B49885CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{287DDF0D-E35C-46D2-A140-F345B49885CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
