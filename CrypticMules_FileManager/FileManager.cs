@@ -49,7 +49,7 @@ namespace CrypticMules_FileManager
                      select file)
                     .First();
 
-            return longestFile.FullName;
+            return FileName(longestFile.FullName);
                                      
                 //string largest = File.;
 
@@ -72,16 +72,24 @@ namespace CrypticMules_FileManager
         }
         //if a tie is found, first one alpha sorted
 
-        //string VowelWeight(filepath)
+        public string VowelWeight(string filepath)
+        {
+           StreamReader sr = new StreamReader(filepath);
+
+            string allWords =  sr.ReadToEnd();
+
+            return allWords;
+
+        }
         //    //Format: 12 Es, 1 A, 4 Is, 6 Os, 2 Us, 0Ys
         //    //return all zeros if file supplied has no txt extension
 
-        //public string FileName()
-        //{
+        public string FileName(string filepath)
+        {
 
-        //    return Path.GetFileName();
+            return Path.GetFileName(filepath);
 
-        //}
+        }
 
         public string FileExtension(string filepath)
         {
