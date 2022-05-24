@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrypticMules_FileManager", "CrypticMules_FileManager\CrypticMules_FileManager.csproj", "{287DDF0D-E35C-46D2-A140-F345B49885CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrypticMules_FileManager", "CrypticMules_FileManager\CrypticMules_FileManager.csproj", "{287DDF0D-E35C-46D2-A140-F345B49885CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagerTestProject", "FileManagerTestProject\FileManagerTestProject.csproj", "{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileManagerTestProject", "FileManagerTestProject\FileManagerTestProject.csproj", "{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagerHarness", "FileManagerHarness\FileManagerHarness.csproj", "{6711C2C7-B703-40B0-801C-BCB67E1AF2F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A632B5FA-FB7E-4042-BC92-6D2398B1EB63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6711C2C7-B703-40B0-801C-BCB67E1AF2F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6711C2C7-B703-40B0-801C-BCB67E1AF2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6711C2C7-B703-40B0-801C-BCB67E1AF2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6711C2C7-B703-40B0-801C-BCB67E1AF2F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
