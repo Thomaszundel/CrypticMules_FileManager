@@ -15,7 +15,7 @@ namespace FileManagerTestProject
         public void FileExistTest()
         {
 
-            bool result = _fm.FileExists("D:/Spring 2022/Software Development 2/TestDirectory/TestText.txt");
+            bool result = _fm.FileExists("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
             
             Assert.IsTrue(result);
 

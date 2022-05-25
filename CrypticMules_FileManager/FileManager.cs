@@ -31,11 +31,11 @@ namespace CrypticMules_FileManager
                 IEnumerable<FileInfo> fileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
 
                 //Return the size of the largest file  
-                long maxSize =
-                    (from file in fileList
-                     let len = GetFileLength(file)
-                     select len)
-                     .Max();
+                //long maxSize =
+                //    (from file in fileList
+                //     let len = GetFileLength(file)
+                //     select len)
+                //     .Max();
 
                 
 
@@ -100,7 +100,49 @@ namespace CrypticMules_FileManager
             return extention;
         }
 
-        //byte[] GetByteArray(filepath)
+        byte[] GetByteArray(string filepath)
+        {
+            byte[] allBytes = null;
+
+            string CurrentDircetory = DirectoryName(filepath);
+
+             
+            DirectoryInfo dir = new DirectoryInfo(CurrentDircetory);
+            IEnumerable<FileInfo> fileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
+
+
+            
+            //Return the size of the largest file
+                long maxSize =
+                    (from file in fileList
+                     let len = GetFileLength(file)
+                     select len)
+                     .Max();
+
+            FileInfo longestFile =
+                    (from file in fileList
+                     let len = GetFileLength(file)
+                     where len > 0
+                     orderby len descending
+                     select file)
+                    .First();
+
+            foreach(FileInfo file in fileList)
+            {
+                long singleFile = file.Length;
+
+
+                byte[] singlebyte = BitConverter.GetBytes(singleFile);
+
+               
+
+                
+            }
+            
+                    
+
+            allBytes = .ToArray() ;
+        }
 
         //string ToString()
         //    //returns a string concatenation of:
