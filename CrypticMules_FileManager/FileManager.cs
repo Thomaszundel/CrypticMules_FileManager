@@ -84,6 +84,7 @@ namespace CrypticMules_FileManager
         //    //Format: 12 Es, 1 A, 4 Is, 6 Os, 2 Us, 0Ys
         //    //return all zeros if file supplied has no txt extension
 
+
         public string FileName(string filepath)
         {
 
