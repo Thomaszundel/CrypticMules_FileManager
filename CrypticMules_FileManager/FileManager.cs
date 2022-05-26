@@ -74,8 +74,7 @@ namespace CrypticMules_FileManager
 
         public string VowelWeight(string filepath)
         {
-            
-            StreamReader sr = new StreamReader(filepath);
+           StreamReader sr = new StreamReader(filepath);
             string allWords =  sr.ReadToEnd();
             int countA = 0;
             int countE = 0;
@@ -89,35 +88,26 @@ namespace CrypticMules_FileManager
             string O;
             string U;
             string Y;
+
             if (allWords != null)
             {
                 foreach (char c in allWords)
                 {
+                    //KVP.TryGetValue(c, out string g)
                     if (c == 65 || c == 97)
-                    {
                         countA++;
-                    }
                     if (c == 69 || c == 101)
-                    {
                         countE++;
-                    }
                     if (c == 73 || c == 105)
-                    {
                         countI++;
-                    }
                     if (c == 79 || c == 111)
-                    {
                         countO++;
-                    }
                     if (c == 85 || c == 117)
-                    {
                         countU++;
-                    }
                     if (c == 89 || c == 121)
-                    {
                         countY++;
-                    }
                 }
+
                 if (countA == 1)
                     A = countA.ToString() + " A";
                 else
@@ -144,6 +134,7 @@ namespace CrypticMules_FileManager
                     Y = countY.ToString() + " Ys";
                 return A + " " + E + " " + I + " " + O + " " + U + " " + Y;
             }
+
             else
 
                 return "0 As 0 Es 0 Is 0 Os 0 Us 0 Ys";
