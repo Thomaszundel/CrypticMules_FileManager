@@ -20,13 +20,32 @@ namespace FileManagerTestProject
             Assert.IsTrue(result);
 
         }
+        //[TestMethod]
+        //public void FileGetsDirectoryTest()
+        //{
+
+        //    string result = _fm.DirectoryName("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+
+        //    Assert.AreEqual("~/TestDirectory", result);
+
+        //}
+
         [TestMethod]
-        public void FileGetsDirectoryTest()
+        public void FileGetsDirectoryLargestTest()
         {
 
-            string result = _fm.DirectoryName("D:/Spring 2022/Software Development 2/TestDirectory");
+            string result = _fm.LargestFileInCurrentDirectory("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
 
-            Assert.AreEqual("TestDirectory",result);
+            Assert.AreEqual("ALargeText.txt", result);
+
+        }
+        [TestMethod]
+        public void FileGetsDirectoryLargestTest()
+        {
+
+            string result = _fm.LargestFileInCurrentDirectory("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+
+            Assert.AreEqual("ALargeText.txt", result);
 
         }
     }

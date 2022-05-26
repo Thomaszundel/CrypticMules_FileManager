@@ -74,7 +74,8 @@ namespace CrypticMules_FileManager
 
         public string VowelWeight(string filepath)
         {
-           StreamReader sr = new StreamReader(filepath);
+            
+            StreamReader sr = new StreamReader(filepath);
             string allWords =  sr.ReadToEnd();
             int countA = 0;
             int countE = 0;
