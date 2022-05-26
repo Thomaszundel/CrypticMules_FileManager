@@ -7,18 +7,18 @@ namespace CrypticMules_FileManager
     {
         Dictionary<int, string> files = new Dictionary<int, string>()
         {
-            {63, "a"},
-            {69, "e"},
-            {73, "i"},
-            {79, "o"},
-            {85, "u"},
-            {89, "y"},
-            {97, "A"},
-            {101, "E"},
-            {105, "I"},
-            {111, "O"},
-            {117, "U"},
-            {121, "Y"}
+            {65, "A"},
+            {69, "E"},
+            {73, "I"},
+            {79, "O"},
+            {85, "U"},
+            {89, "Y"},
+            {97, "a"},
+            {101, "e"},
+            {105, "i"},
+            {111, "o"},
+            {117, "u"},
+            {121, "y"}
         };
         public bool FileExists(string filepath)
         {
