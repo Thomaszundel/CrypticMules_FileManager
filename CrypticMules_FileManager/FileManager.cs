@@ -5,6 +5,21 @@ namespace CrypticMules_FileManager
 
     public class FileManager
     {
+        Dictionary<int, string> files = new Dictionary<int, string>()
+        {
+            {63, "a"},
+            {69, "e"},
+            {73, "i"},
+            {79, "o"},
+            {85, "u"},
+            {89, "y"},
+            {97, "A"},
+            {101, "E"},
+            {105, "I"},
+            {111, "O"},
+            {117, "U"},
+            {121, "Y"}
+        };
         public bool FileExists(string filepath)
         {
             bool exists = File.Exists(filepath);
@@ -13,8 +28,7 @@ namespace CrypticMules_FileManager
 
         public string DirectoryName(string filepath)
         {
-            string? name = Path.GetDirectoryName(filepath);
-
+            string name = Path.GetDirectoryName(filepath);
             return name;
         }
 
@@ -71,18 +85,18 @@ namespace CrypticMules_FileManager
             {
                 foreach (char c in allWords)
                 {
-                    //KVP.TryGetValue(c, out string g)
-                    if (c == 65 || c == 97)
+                    files.TryGetValue(c, out string Check);
+                    if (Check == "a" || Check == "A")
                         countA++;
-                    if (c == 69 || c == 101)
+                    if (Check == "e" || Check == "E")
                         countE++;
-                    if (c == 73 || c == 105)
+                    if (Check == "i" || Check == "I")
                         countI++;
-                    if (c == 79 || c == 111)
+                    if (Check == "o" || Check == "O")
                         countO++;
-                    if (c == 85 || c == 117)
+                    if (Check == "u" || Check == "U")
                         countU++;
-                    if (c == 89 || c == 121)
+                    if (Check == "y" || Check == "Y")
                         countY++;
                 }
 
