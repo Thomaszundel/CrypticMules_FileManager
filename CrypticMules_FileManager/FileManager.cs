@@ -5,21 +5,7 @@ namespace CrypticMules_FileManager
 
     public class FileManager
     {
-        Dictionary<int, string> files = new Dictionary<int, string>()
-        {
-            {65, "A"},
-            {69, "E"},
-            {73, "I"},
-            {79, "O"},
-            {85, "U"},
-            {89, "Y"},
-            {97, "a"},
-            {101, "e"},
-            {105, "i"},
-            {111, "o"},
-            {117, "u"},
-            {121, "y"}
-        };
+      
         public bool FileExists(string filepath)
         {
             bool exists = File.Exists(filepath);
@@ -67,7 +53,7 @@ namespace CrypticMules_FileManager
         public string VowelWeight(string filepath)
         {
             StreamReader sr = new StreamReader(filepath);
-            string allWords = sr.ReadToEnd();
+            string allWords = sr.ReadToEnd().ToUpper();
             int countA = 0;
             int countE = 0;
             int countI = 0;
@@ -79,59 +65,53 @@ namespace CrypticMules_FileManager
             string I;
             string O;
             string U;
-            string Y;
+            string Y; 
 
-            if (allWords != null)
+            if (FileExtension(filepath) != ".txt")
             {
-                foreach (char c in allWords)
-                {
-                    files.TryGetValue(c, out string Check);
-                    if (Check == "a" || Check == "A")
-                        countA++;
-                    if (Check == "e" || Check == "E")
-                        countE++;
-                    if (Check == "i" || Check == "I")
-                        countI++;
-                    if (Check == "o" || Check == "O")
-                        countO++;
-                    if (Check == "u" || Check == "U")
-                        countU++;
-                    if (Check == "y" || Check == "Y")
-                        countY++;
-                }
-
-                if (countA == 1)
-                    A = countA.ToString() + " A";
-                else
-                    A = countA.ToString() + " As";
-                if (countE == 1)
-                    E = countE.ToString() + " E";
-                else
-                    E = countE.ToString() + " Es";
-                if (countI == 1)
-                    I = countI.ToString() + " I";
-                else
-                    I = countI.ToString() + " Is";
-                if (countO == 1)
-                    O = countO.ToString() + " O";
-                else
-                    O = countO.ToString() + " Os";
-                if (countU == 1)
-                    U = countU.ToString() + " U";
-                else
-                    U = countU.ToString() + " Us";
-                if (countY == 1)
-                    Y = countY.ToString() + " Y";
-                else
-                    Y = countY.ToString() + " Ys";
-                return A + " " + E + " " + I + " " + O + " " + U + " " + Y;
+                return "0 As 0 Es 0 Is 0 Os 0 Us 0 Ys";
             }
 
-            else
+            foreach (char c in allWords)
+            {
+                if (c == 65)
+                    countA++;
+                if (c == 69)
+                    countE++;
+                if (c == 73)
+                    countI++;
+                if (c == 79)
+                    countO++;
+                if (c == 85)
+                    countU++;
+                if (c == 89)
+                    countY++;
+            }
 
-                return "0 As 0 Es 0 Is 0 Os 0 Us 0 Ys";
+            A = countA.ToString() + " As";
+            E = countE.ToString() + " Es";
+            I = countI.ToString() + " Is";
+            O = countO.ToString() + " Os";
+            U = countU.ToString() + " Us";
+            Y = countY.ToString() + " Ys";
+
+            if (countA == 1)
+                A = countA.ToString() + " A";
+            if (countE == 1)
+                E = countE.ToString() + " E";
+            if (countI == 1)
+                I = countI.ToString() + " I";
+            if (countO == 1)
+                O = countO.ToString() + " O";
+            if (countU == 1)
+                U = countU.ToString() + " U";
+            if (countY == 1)
+                Y = countY.ToString() + " Y";
+            
+            return A + " " + E + " " + I + " " + O + " " + U + " " + Y;
         }
-       
+
+
         public string FileName(string filepath)
         {
             string filename = Path.GetFileName(filepath);
