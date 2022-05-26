@@ -144,6 +144,7 @@ namespace CrypticMules_FileManager
                 return A + " " + E + " " + I + " " + O + " " + U + " " + Y;
             }
             else
+
                 return "0 As 0 Es 0 Is 0 Os 0 Us 0 Ys";
         }
         //    //Format: 12 Es, 1 A, 4 Is, 6 Os, 2 Us, 0Ys
@@ -165,49 +166,49 @@ namespace CrypticMules_FileManager
             return extention;
         }
 
-        byte[] GetByteArray(string filepath)
-        {
-            byte[] allBytes = null;
+        //byte[] GetByteArray(string filepath)
+        //{
+        //    byte[] allBytes = null;
 
-            string CurrentDircetory = DirectoryName(filepath);
-
-             
-            DirectoryInfo dir = new DirectoryInfo(CurrentDircetory);
-            IEnumerable<FileInfo> fileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
+        //    string CurrentDircetory = DirectoryName(filepath);
 
 
-            
-            //Return the size of the largest file
-                long maxSize =
-                    (from file in fileList
-                     let len = GetFileLength(file)
-                     select len)
-                     .Max();
-
-            FileInfo longestFile =
-                    (from file in fileList
-                     let len = GetFileLength(file)
-                     where len > 0
-                     orderby len descending
-                     select file)
-                    .First();
-
-            foreach(FileInfo file in fileList)
-            {
-                long singleFile = file.Length;
+        //    DirectoryInfo dir = new DirectoryInfo(CurrentDircetory);
+        //    IEnumerable<FileInfo> fileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
 
 
-                byte[] singlebyte = BitConverter.GetBytes(singleFile);
 
-               
+        //    //Return the size of the largest file
+        //    long maxSize =
+        //        (from file in fileList
+        //         let len = GetFileLength(file)
+        //         select len)
+        //         .Max();
 
-                
-            }
-            
-                    
+        //    FileInfo longestFile =
+        //            (from file in fileList
+        //             let len = GetFileLength(file)
+        //             where len > 0
+        //             orderby len descending
+        //             select file)
+        //            .First();
 
-            allBytes = .ToArray() ;
-        }
+        //    foreach (FileInfo file in fileList)
+        //    {
+        //        long singleFile = file.Length;
+
+
+        //        byte singlebyte = BitConverter.GetBytes(singleFile);
+
+
+
+
+        //    }
+
+
+
+        //    allBytes = .ToArray();
+        //}
 
         //string ToString()
         //    //returns a string concatenation of:
