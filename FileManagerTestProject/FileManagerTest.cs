@@ -80,5 +80,17 @@ namespace FileManagerTestProject
             Assert.AreEqual("97,65,32,69,101,32,73,105,32,79,111,32,85,117,32,89,121,32,", allbytes);
 
         }
+
+        [TestMethod]
+        public void FileToStringTest()
+        {
+
+            string result = _fm.ToString("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+           
+            Assert.AreEqual("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt, 18, False, 5/24/2022 12:30:48 PM", result);
+
+        }
+
+        
     }
 }

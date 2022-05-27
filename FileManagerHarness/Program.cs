@@ -21,6 +21,7 @@ string vowelCount = fm.VowelWeight(input);
 
 byte[] bytes = fm.GetByteArray(input);
 
+string toString = fm.ToString(input);   
 
 Console.WriteLine(exists);
 Console.WriteLine(directory);
@@ -36,5 +37,7 @@ foreach (byte b in bytes)
    
 }
 Console.WriteLine(allbytes);
+
+Console.WriteLine(toString);
 
 
