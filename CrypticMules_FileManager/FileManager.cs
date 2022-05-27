@@ -52,6 +52,11 @@ namespace CrypticMules_FileManager
 
         public string VowelWeight(string filepath)
         {
+            if (FileExtension(filepath) != ".txt")
+            {
+                return "0 As 0 Es 0 Is 0 Os 0 Us 0 Ys";
+            }
+
             StreamReader sr = new StreamReader(filepath);
             string allWords = sr.ReadToEnd().ToUpper();
             int countA = 0;
@@ -66,11 +71,6 @@ namespace CrypticMules_FileManager
             string O;
             string U;
             string Y; 
-
-            if (FileExtension(filepath) != ".txt")
-            {
-                return "0 As 0 Es 0 Is 0 Os 0 Us 0 Ys";
-            }
 
             foreach (char c in allWords)
             {
