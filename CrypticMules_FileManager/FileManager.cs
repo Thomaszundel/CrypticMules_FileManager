@@ -133,11 +133,16 @@ namespace CrypticMules_FileManager
             return allbytes;
         }
 
-        //string ToString()
-        //    //returns a string concatenation of:
-        //string FilePath
-        //long Size
-        //bool ReadOnly
-        //DateTime DateChanged
-    }
+       public string ToString(string filepath)
+        {
+             FileInfo fileInfo = new(filepath);
+            return 
+                filepath + "\n" + fileInfo.Length + "\n" + fileInfo.IsReadOnly + "\n" + fileInfo.LastWriteTime;
+        }
+    //    //returns a string concatenation of:
+    //string FilePath
+    //long Size
+    //bool ReadOnly
+    //DateTime DateChanged
+}
 }
