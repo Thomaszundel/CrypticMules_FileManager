@@ -18,4 +18,19 @@
     <ProjectReference Include="..\CrypticMules_FileManager\CrypticMules_FileManager.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="FilePath.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FilePath.runsettings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="FilePath.runsettings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>FilePath.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
 </Project>

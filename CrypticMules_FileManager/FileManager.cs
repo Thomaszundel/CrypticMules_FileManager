@@ -1,9 +1,10 @@
 ﻿using System.IO;
 
+
 namespace CrypticMules_FileManager
 {
 
-    public class FileManager
+    public class FileManager 
     {
       
         public bool FileExists(string filepath)

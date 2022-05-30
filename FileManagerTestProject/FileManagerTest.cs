@@ -3,9 +3,22 @@ using CrypticMules_FileManager;
 
 namespace FileManagerTestProject
 {
+
+
     [TestClass]
-    public class FileManagerTest
+    public class FileManagerTest : TestBase
     {
+        //private static string? path = null;
+
+        //[ClassInitialize]
+        //public static void ClassInit(TestContext context)
+        //{
+        //    path = GetFilePath();
+        //}
+
+       
+
+
         private FileManager _fm;
         public FileManagerTest()
         {
