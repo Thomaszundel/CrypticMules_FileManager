@@ -28,7 +28,7 @@ namespace CrypticMules_FileManager
 
             FileInfo longestFile =
                 (from file in fileList
-                 let len = GetFileLength(file)
+                 let len = file.Length
                  where len > 0
                  orderby len descending
                  select file)
@@ -36,19 +36,6 @@ namespace CrypticMules_FileManager
             string foundFile = FileName(longestFile.FullName);
 
             return foundFile;
-        }
-        static long GetFileLength(FileInfo fi)
-        {
-            long retval;
-            try
-            {
-                retval = fi.Length;
-            }
-            catch (FileNotFoundException)
-            {
-                retval = 0;
-            }
-            return retval;
         }
 
         public string VowelWeight(string filepath)
@@ -109,7 +96,7 @@ namespace CrypticMules_FileManager
             if (countY == 1)
                 Y = countY.ToString() + " Y";
             
-            return A + " " + E + " " + I + " " + O + " " + U + " " + Y;
+            return A + ", " + E + ", " + I + ", " + O + ", " + U + ", " + Y;
         }
 
 

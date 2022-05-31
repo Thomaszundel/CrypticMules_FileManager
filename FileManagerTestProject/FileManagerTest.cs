@@ -5,20 +5,32 @@ using System.IO;
 
 namespace FileManagerTestProject
 {
-
+   // D:\Spring 2022\Software Development 2\TestDirectory\VowelTest.txt
 
     [TestClass]
     public class FileManagerTest 
     {
-        private static string? path;
-
+        private static string? vowlPath;
+        private static string? singleVowlPath;
+        private static string? wordPath;
         [ClassInitialize]
         public static void ClassInit(TestContext context)
         {
-            string txtfile = context.Properties["GoodFilePath"].ToString();
-            path = Path.Combine(
+            string vowlTxtfile = context.Properties["VowlTest"].ToString();
+            vowlPath = Path.Combine(
                 Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.ToString(),
-                @"TestFiles\", txtfile);
+                @"TestFiles\", vowlTxtfile);
+
+            
+            string singleVowlTxtfile = context.Properties["SingleVowlTest"].ToString();
+            singleVowlPath = Path.Combine(
+                Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.ToString(),
+                @"TestFiles\", singleVowlTxtfile);
+
+            string wordfile = context.Properties["WordFileTest"].ToString();
+            wordPath = Path.Combine(
+                Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.ToString(),
+                @"TestFiles\", wordfile);
         }
 
 
@@ -31,18 +43,19 @@ namespace FileManagerTestProject
         public void FileExistTest()
         {
 
-            bool result = _fm.FileExists(path);
+            bool result = _fm.FileExists(vowlPath);
             
             Assert.IsTrue(result);
 
         }
+
         [TestMethod]
         public void FileGetsDirectoryTest()
         {
 
-            string result = _fm.DirectoryName(path);
+            string result = _fm.DirectoryName(vowlPath);
 
-            Assert.AreEqual(@"C:\Users\jgche\Desktop\Mule\FileManagerTestProject\TestFiles", result);
+            Assert.IsNotNull(result);
 
         }
 
@@ -50,7 +63,7 @@ namespace FileManagerTestProject
         public void FileGetsDirectoryLargestTest()
         {
 
-            string result = _fm.LargestFileInCurrentDirectory(path);
+            string result = _fm.LargestFileInCurrentDirectory(vowlPath);
 
             Assert.AreEqual("ALargeText.txt", result);
 
@@ -59,7 +72,7 @@ namespace FileManagerTestProject
         public void FileGetsFileNameTest()
         {
 
-            string result = _fm.FileName(path);
+            string result = _fm.FileName(vowlPath);
 
             Assert.AreEqual("VowelTest.txt", result);
 
@@ -68,25 +81,44 @@ namespace FileManagerTestProject
         public void FileGetsFileExtTest()
         {
 
-            string result = _fm.FileExtension(path);
+            string result = _fm.FileExtension(vowlPath);
 
             Assert.AreEqual(".txt", result);
 
         }
         [TestMethod]
-        public void FileGetsVowlsTest()
+        public void FileGetsVowlsWithSTest()
         {
 
-            string result = _fm.VowelWeight(path);
+            string result = _fm.VowelWeight(vowlPath);
 
-            Assert.AreEqual("2 As 2 Es 2 Is 2 Os 2 Us 2 Ys", result);
+            Assert.AreEqual("2 As, 2 Es, 2 Is, 2 Os, 2 Us, 2 Ys", result);
 
         }
+        [TestMethod]
+        public void FileGetsVowlsWithoutSTest()
+        {
+
+            string result = _fm.VowelWeight(singleVowlPath);
+
+            Assert.AreEqual("1 A, 1 E, 1 I, 1 O, 1 U, 1 Y", result);
+
+        }
+        [TestMethod]
+        public void FileGetsVowlsWordTest()
+        {
+
+            string result = _fm.VowelWeight(wordPath);
+
+            Assert.AreEqual("0 As 0 Es 0 Is 0 Os 0 Us 0 Ys", result);
+
+        }
+        
         [TestMethod]
         public void FileGetsByteArrayTest()
         {
            
-            byte[] result = _fm.GetByteArray(path);
+            byte[] result = _fm.GetByteArray(vowlPath);
             string allbytes = string.Empty;
             foreach (byte b in result)
             {
@@ -101,9 +133,9 @@ namespace FileManagerTestProject
         public void FileToStringTest()
         {
 
-            string result = _fm.ToString(path);
+            string result = _fm.ToString(vowlPath);
            
-            Assert.AreEqual(@"C:\Users\jgche\Desktop\Mule\FileManagerTestProject\TestFiles\VowelTest.txt, 18, False, 5/31/2022 11:13:48 AM", result);
+            Assert.IsNotNull(result);
 
         }
 
