@@ -50,7 +50,7 @@ namespace FileManagerTestProject
         public void FileGetsDirectoryLargestTest()
         {
 
-            string result = _fm.LargestFileInCurrentDirectory("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+            string result = _fm.LargestFileInCurrentDirectory(path);
 
             Assert.AreEqual("ALargeText.txt", result);
 
@@ -59,7 +59,7 @@ namespace FileManagerTestProject
         public void FileGetsFileNameTest()
         {
 
-            string result = _fm.FileName("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+            string result = _fm.FileName(path);
 
             Assert.AreEqual("VowelTest.txt", result);
 
@@ -68,7 +68,7 @@ namespace FileManagerTestProject
         public void FileGetsFileExtTest()
         {
 
-            string result = _fm.FileExtension(@"C: \Users\jgche\Desktop\Mule\FileManagerTestProject\TestFiles\VowelTest.txt");
+            string result = _fm.FileExtension(path);
 
             Assert.AreEqual(".txt", result);
 
@@ -77,7 +77,7 @@ namespace FileManagerTestProject
         public void FileGetsVowlsTest()
         {
 
-            string result = _fm.VowelWeight("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+            string result = _fm.VowelWeight(path);
 
             Assert.AreEqual("2 As 2 Es 2 Is 2 Os 2 Us 2 Ys", result);
 
@@ -86,7 +86,7 @@ namespace FileManagerTestProject
         public void FileGetsByteArrayTest()
         {
            
-            byte[] result = _fm.GetByteArray("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+            byte[] result = _fm.GetByteArray(path);
             string allbytes = string.Empty;
             foreach (byte b in result)
             {
@@ -101,7 +101,7 @@ namespace FileManagerTestProject
         public void FileToStringTest()
         {
 
-            string result = _fm.ToString("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+            string result = _fm.ToString(path);
            
             Assert.AreEqual("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt, 18, False, 5/24/2022 12:30:48 PM", result);
 
