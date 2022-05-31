@@ -42,7 +42,7 @@ namespace FileManagerTestProject
 
             string result = _fm.DirectoryName(path);
 
-            Assert.AreEqual(@"D:\Spring 2022\Software Development 2\TestDirectory", result);
+            Assert.AreEqual(@"C:\Users\jgche\Desktop\Mule\FileManagerTestProject\TestFiles", result);
 
         }
 
@@ -103,7 +103,7 @@ namespace FileManagerTestProject
 
             string result = _fm.ToString(path);
            
-            Assert.AreEqual("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt, 18, False, 5/24/2022 12:30:48 PM", result);
+            Assert.AreEqual(@"C:\Users\jgche\Desktop\Mule\FileManagerTestProject\TestFiles\VowelTest.txt, 18, False, 5/31/2022 11:13:48 AM", result);
 
         }
 
