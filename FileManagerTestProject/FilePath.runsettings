@@ -1,7 +1,6 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <RunSettings>
 	<TestRunParameters>
-		<Parameter name='GoodFilePath' value='[ThePath]TestFiles\VowelTest.txt' />\
-		
+		<Parameter name='GoodFilePath' value='VowelTest.txt' />\	
 	</TestRunParameters>
 </RunSettings>

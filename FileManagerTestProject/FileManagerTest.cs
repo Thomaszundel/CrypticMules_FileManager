@@ -1,22 +1,25 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CrypticMules_FileManager;
+using System;
+using System.IO;
 
 namespace FileManagerTestProject
 {
 
 
     [TestClass]
-    public class FileManagerTest : TestBase
+    public class FileManagerTest 
     {
-        //private static string? path = null;
+        private static string? path;
 
-        //[ClassInitialize]
-        //public static void ClassInit(TestContext context)
-        //{
-        //    path = GetFilePath();
-        //}
-
-       
+        [ClassInitialize]
+        public static void ClassInit(TestContext context)
+        {
+            string txtfile = context.Properties["GoodFilePath"].ToString();
+            path = Path.Combine(
+                Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.ToString(),
+                @"TestFiles\", txtfile);
+        }
 
 
         private FileManager _fm;
@@ -28,7 +31,7 @@ namespace FileManagerTestProject
         public void FileExistTest()
         {
 
-            bool result = _fm.FileExists("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+            bool result = _fm.FileExists(path);
             
             Assert.IsTrue(result);
 
@@ -37,7 +40,7 @@ namespace FileManagerTestProject
         public void FileGetsDirectoryTest()
         {
 
-            string result = _fm.DirectoryName("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+            string result = _fm.DirectoryName(path);
 
             Assert.AreEqual(@"D:\Spring 2022\Software Development 2\TestDirectory", result);
 
@@ -65,7 +68,7 @@ namespace FileManagerTestProject
         public void FileGetsFileExtTest()
         {
 
-            string result = _fm.FileExtension("D:/Spring 2022/Software Development 2/TestDirectory/VowelTest.txt");
+            string result = _fm.FileExtension(@"C: \Users\jgche\Desktop\Mule\FileManagerTestProject\TestFiles\VowelTest.txt");
 
             Assert.AreEqual(".txt", result);
 
