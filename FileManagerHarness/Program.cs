@@ -29,13 +29,6 @@ Console.WriteLine("Larges file in current Directory: "+largest);
 Console.WriteLine("Filename: "+fileName);
 Console.WriteLine("File Extention: "+  extention);
 Console.WriteLine("Vowel Count: "+vowelCount);
-
-//string allbytes = string.Empty;
-//foreach (byte b in bytes)
-//{
-//    allbytes += b + ",";
-   
-//}
 Console.WriteLine("Length of byte array: "+bytes.Length);
 
 Console.WriteLine("ToString output: "+toString);
