@@ -2,7 +2,7 @@
 
 string input;
 bool exists = false;
-
+Console.WriteLine("Please input a filepath");
 input = Console.ReadLine();
 
 FileManager fm = new FileManager();
@@ -23,21 +23,21 @@ byte[] bytes = fm.GetByteArray(input);
 
 string toString = fm.ToString(input);   
 
-Console.WriteLine(exists);
-Console.WriteLine(directory);
-Console.WriteLine(largest);
-Console.WriteLine(fileName);
-Console.WriteLine(extention);
-Console.WriteLine(vowelCount);
+Console.WriteLine("File Exists: "+exists);
+Console.WriteLine("Directory Name: "+directory);
+Console.WriteLine("Larges file in current Directory: "+largest);
+Console.WriteLine("Filename: "+fileName);
+Console.WriteLine("File Extention: "+  extention);
+Console.WriteLine("Vowel Count: "+vowelCount);
 
-string allbytes = string.Empty;
-foreach (byte b in bytes)
-{
-    allbytes += b + ",";
+//string allbytes = string.Empty;
+//foreach (byte b in bytes)
+//{
+//    allbytes += b + ",";
    
-}
-Console.WriteLine(allbytes);
+//}
+Console.WriteLine("Length of byte array: "+bytes.Length);
 
-Console.WriteLine(toString);
+Console.WriteLine("ToString output: "+toString);
 
 
