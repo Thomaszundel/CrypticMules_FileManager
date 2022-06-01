@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="bin\Release\net6.0\CrypticMules_FileManager.deps.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Release\net6.0\CrypticMules_FileManager.dll" />
+    <None Include="bin\Release\net6.0\CrypticMules_FileManager.pdb" />
+    <None Include="bin\Release\net6.0\publish\CrypticMules_FileManager.1.0.0.nupkg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
   </ItemGroup>
 

@@ -25,7 +25,7 @@ string toString = fm.ToString(input);
 
 Console.WriteLine("File Exists: "+exists);
 Console.WriteLine("Directory Name: "+directory);
-Console.WriteLine("Larges file in current Directory: "+largest);
+Console.WriteLine("Largest file in current Directory: "+largest);
 Console.WriteLine("Filename: "+fileName);
 Console.WriteLine("File Extention: "+  extention);
 Console.WriteLine("Vowel Count: "+vowelCount);
